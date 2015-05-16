@@ -726,8 +726,7 @@ int Dumpfile_Json::Flush(){
     if (net->gpsdata.gps_valid) {
       virgule = 1;
       fprintf(jsonfile,",\n");
-      fprintf(jsonfile,"\"Latitude\" : %f,\n",net->gpsdata.aggregate_lat);
-      fprintf(jsonfile,"\"Longitude\" : %f,\n",net->gpsdata.aggregate_lon);
+      fprintf(jsonfile,"\"Location\" : \"%f,%f\",\n",net->gpsdata.aggregate_lat,net->gpsdata.aggregate_lon);
       fprintf(jsonfile,"\"Altitude\" : %f,\n",net->gpsdata.aggregate_alt);
 
     }
